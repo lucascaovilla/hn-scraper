@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Maratona News</title>
+  <!-- AQUI IMPORTO UM ESTILO CSS PRONTO PARA VOCÊ -->
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+
+<body>
+  <!-- APÓS VER ESSE BLOCO DE CÓDIGO PODE APAGAR, SÓ PRA TE MOSTRA UM EXEMPLO DE HTML QUE USA OS ESTILOS DO CSS (PRA FICAR BONITINHO ;) )-->
+  <header>
+    <h1>Hacker News 2.0</h1>
+    <div>
+      <strong><a href="/?order_by=popular">popular</a></strong>
+      <a>|</a>
+      <strong><a href="/?order_by=new">new</a></strong>
+    </div>
+  </header>
+
+  <main>
+    <!-- #### -->
+    <!-- BLOCO DE CODIGO EXEMPLO DE 1 MATÉRIA -->
+    {% for info in news %}
+    <div>    
+        <div>
+          <h3><a href="/index?news_id={{info.id_url}}">{{info.title}}</a></h3>
+          <h4><a href="{{info.url}}" target="_blank">See original text</a></h4>
+        </div>
+        <div>
+          <h5>
+            <strong>points: {{info.points}}</strong>
+            <strong>| comments: {{info.num_comments}}</strong>
+            <strong>| author: {{info.author}}</strong>
+          </h5>
+        </div>
+      </div>
+      <hr />
+      {% endfor %}
+    <!-- ACABA HTML ESTUTURA DE UMA MATERIA -->
+    <!-- #### -->
+
+  </main>
+</body>
+</html>
